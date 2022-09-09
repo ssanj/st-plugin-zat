@@ -1,0 +1,17 @@
+[
+  {
+    "variable_name": "project",
+    "description": "Name of project",
+    "prompt": "Please enter your project name",
+    "filters": [
+      { "name": "__default__",
+        "filter": "Pascal"
+      }
+    ]
+  },
+  {
+    "variable_name": "plugin_description",
+    "description": "Explain what your plugin is about",
+    "prompt": "Please enter your plugin description"
+  }
+]
