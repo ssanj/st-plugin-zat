@@ -6,6 +6,9 @@
     "filters": [
       { "name": "__default__",
         "filter": "Pascal"
+      },
+      { "name": "underscore",
+        "filter": "Snake"
       }
     ]
   },
