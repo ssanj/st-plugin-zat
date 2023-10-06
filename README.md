@@ -23,7 +23,7 @@ Includes the following:
   zat --target-dir TARGET_DIRECTORY --template-dir CHECKOUT_DIR
   ```
 
-- Enter values for `project` and `plugin description` when prompted. Choose `y` to confirm values
+- Enter values for `project` and `plugin description` when prompted. Choose `y` to confirm values. Additional variables can be defined in `.variables.zat-prompt` as required.
 
 - Make scripts executable:
   ```bash
