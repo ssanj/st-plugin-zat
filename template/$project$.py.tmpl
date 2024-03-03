@@ -4,17 +4,44 @@ from typing import Optional, List
 from . import $project__underscore$_setting as SETTING
 from . import settings_loader as SETTING_LOADER
 
+{% if command_type == "text"%}
 class $project$Command(sublime_plugin.TextCommand):
 
-  print("$project__underscore$ command has loaded.")
+  print("$project$ Text command has loaded.")
 
   def run(self, edit: sublime.Edit) -> None:
     if self and self.view:
+      self.log("$project$ is running")
+      self.settings: SETTING.$project$Setting = self.load_settings()
+      self.debug(f'settings: {self.settings}')
+    else:
+      sublime.message_dialog("Could not initialise plugin")
+{% elif command_type == "window" %}
+class $project$Command(sublime_plugin.WindowCommand):
+
+  print("$project$ Window command has loaded.")
+
+  def run(self) -> None:
+    if self and self.window:
+      self.log("$project$ is running")
+      self.settings: SETTING.$project$Setting = self.load_settings()
+      self.debug(f'settings: {self.settings}')
+    else:
+      sublime.message_dialog("Could not initialise plugin")
+
+{% else %}
+class $project$Command(sublime_plugin.ApplicationCommand):
+
+  print("$project$ App command has loaded.")
+
+  def run(self) -> None:
+    if self:
       self.log("$project__underscore$ is running")
       self.settings: SETTING.$project$Setting = self.load_settings()
       self.debug(f'settings: {self.settings}')
     else:
       sublime.message_dialog("Could not initialise plugin")
+{% endif %}
 
   def is_enabled(self) -> bool:
     return True

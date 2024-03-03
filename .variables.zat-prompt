@@ -1,8 +1,8 @@
 [
   {
     "variable_name": "project",
-    "description": "Name of project",
-    "prompt": "Please enter your project name",
+    "description": "Name of plugin",
+    "prompt": "Please enter your plugin name",
     "filters": [
       { "name": "__default__",
         "filter": "Pascal"
@@ -16,5 +16,33 @@
     "variable_name": "plugin_description",
     "description": "Explain what your plugin is about",
     "prompt": "Please enter your plugin description"
+  },
+  {
+    "variable_name": "python_version",
+    "description": "Python version for Sublime Text Plugin engine",
+    "prompt": "Please enter the Python version required",
+    "default_value": "3.8"
+  },
+  {
+    "variable_name": "command_type",
+    "description": "Type of Command",
+    "prompt": "Please choose the type of Command",
+    "choice": [
+      {
+        "display": "Text",
+        "description": "A Text Command",
+        "value": "text"
+      },
+      {
+        "display": "Window",
+        "description": "A Window Command",
+        "value": "window"
+      },
+      {
+        "display": "App",
+        "description": "An Application Command",
+        "value": "app"
+      }
+    ]
   }
 ]
