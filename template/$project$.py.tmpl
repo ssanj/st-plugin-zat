@@ -3,8 +3,7 @@ import sublime_plugin
 from typing import Optional, List
 from . import $project__underscore$_setting as SETTING
 from . import settings_loader as SETTING_LOADER
-
-{% if command_type == "text"%}
+{% if command_type == "text" %}
 class $project$Command(sublime_plugin.TextCommand):
 
   print("$project$ Text command has loaded.")
@@ -28,7 +27,6 @@ class $project$Command(sublime_plugin.WindowCommand):
       self.debug(f'settings: {self.settings}')
     else:
       sublime.message_dialog("Could not initialise plugin")
-
 {% else %}
 class $project$Command(sublime_plugin.ApplicationCommand):
 
@@ -42,7 +40,6 @@ class $project$Command(sublime_plugin.ApplicationCommand):
     else:
       sublime.message_dialog("Could not initialise plugin")
 {% endif %}
-
   def is_enabled(self) -> bool:
     return True
 
