@@ -34,7 +34,7 @@ class $project$Command(sublime_plugin.ApplicationCommand):
 
   def run(self) -> None:
     if self:
-      self.log("$project__underscore$ is running")
+      self.log("$project$ is running")
       self.settings: SETTING.$project$Setting = self.load_settings()
       self.debug(f'settings: {self.settings}')
     else:
