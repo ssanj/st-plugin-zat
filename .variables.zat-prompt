@@ -27,7 +27,7 @@
     "variable_name": "command_type",
     "description": "Type of Command",
     "prompt": "Please choose the type of Command",
-    "choice": [
+    "choices": [
       {
         "display": "Text",
         "description": "A Text Command",
